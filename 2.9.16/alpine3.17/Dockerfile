@@ -27,4 +27,4 @@ COPY nats-server.conf /etc/nats/nats-server.conf
 COPY docker-entrypoint.sh /usr/local/bin
 EXPOSE 4222 8222 6222
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["nats-server", "--config", "/etc/nats/nats-server.conf"]
+CMD ["nats-server", "-n", "my_server_name", "-js", "--config", "/etc/nats/nats-server.conf"]
